@@ -446,8 +446,9 @@ input[type=submit]{
 
 /* делаем меню при смене разрышения экрана на Tablet */
 @media (min-width: 1024px){
-	.fav_btn {
-		opacity: 0;
+	
+	.menu_btn{
+		display: none;
 	}
 }
 
@@ -519,7 +520,7 @@ input[type=submit]{
 
 
 	}
-	.favourite__header_text.active{
+	.favourite__header_text {
 		opacity: 0;
 	}
 
