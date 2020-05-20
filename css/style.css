@@ -352,7 +352,6 @@ input[type=submit]{
 	margin: 40px;
 }
 .favtext{
-	margin: 0 0 20px 0;
 	font-weight: 500;
 	font-size: 20px;
 	line-height: 28px;
@@ -495,7 +494,6 @@ input[type=submit]{
 	}
 	.favtext.btn{
 		padding: 0 0 0 10px;
-		margin: 0;
 	}
 	.favourite{
     right: -480px;
