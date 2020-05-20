@@ -449,19 +449,18 @@ input[type=submit]{
 
 
 @media (max-width: 1023px){
+	body{
+
+	}
+
 	body.lock{
 		overflow: hidden;
 	}
-	.container{
-
-	}
-	.menu_favourite {
-
-	}
+	.container{}
+	.menu_favourite {}
 	.menu_favourite.active{
 		z-index: 3; 
-
-	}
+}
 	.favburger{
 		display: block;
 		position: relative;
