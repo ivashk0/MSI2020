@@ -351,9 +351,6 @@ input[type=submit]{
 
 .favourite__joke{
 	margin: 40px;
-
-
-
 }
 .favtext{
 	margin: 0 0 20px 0;
@@ -365,7 +362,7 @@ input[type=submit]{
 
 .favourite__box {
 	/*opacity: 0;*/
-	margin: 0 0 20px 0;
+	margin: 0px 0 20px 0;
 	/* width: 480px;                */
 
 
@@ -379,8 +376,6 @@ input[type=submit]{
 
 .favourite__box_joke{
 	padding: 20px;
-
-
 }
 
 .box_heart {
@@ -517,9 +512,9 @@ input[type=submit]{
 		display: flex;
 		z-index: 2;
 	    transition: all .3s ease-in-out;
-
-
 	}
+
+	
 	.favourite__header_text {
 		display: none;
 	}
@@ -545,12 +540,21 @@ input[type=submit]{
 		/*display: flex;
 		justify-content: space-between;*/
 	}
+	.favourite__main_joke{
+		margin: 48px 0 0 0;
+	}
+
 	.fav_btn{
 		display: flex;
 	}
 	.favourite__header{
-		display: flex;
-		justify-content: space-between;
+		display: block;
+	    position: fixed;
+	    margin: 0 0 0 -40px;
+	    top: 0;
+	    height: 75px;
+	    width: 100%;
+	    background-color: #F8F8F8;
 	}
 	.menu_btn{
 		position: fixed;
@@ -570,8 +574,11 @@ input[type=submit]{
 	.favourite.active{
 		width: 100%;
 	}
+	.favourite__header{
+	    margin: 0 0 0 -20px;
+	}
 	.favourite__joke{
-		margin: 88px 20px 20px 20px;
+		margin: 40px 20px 20px 20px;
 	}
 	.main{
 		margin: 20px;
