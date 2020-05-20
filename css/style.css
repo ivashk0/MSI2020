@@ -325,10 +325,17 @@ input[type=submit]{
 
 
 
-.favorite{
+.favourite{
 	background-color: #F8F8F8;
 	width: 33.34%;
+	min-height: 100vh;
 	/* width: 480px;                */
+
+	position: fixed;
+    right: 0;
+    top: 0;
+    z-index: 3;
+    transition: all .3s ease-in-out;
 }
 
 
@@ -340,7 +347,7 @@ input[type=submit]{
 
 
 
-.favorite__joke{
+.favourite__joke{
 	margin: 40px;
 
 
@@ -354,7 +361,8 @@ input[type=submit]{
 	color: #ABABAB;
 }
 
-.favorite__box {
+.favourite__box {
+	/*opacity: 0;*/
 	margin: 0 0 20px 0;
 	/* width: 480px;                */
 
@@ -367,7 +375,7 @@ input[type=submit]{
 	border-radius: 10px;
 }
 
-.favorite__box_joke{
+.favourite__box_joke{
 	padding: 20px;
 
 
@@ -378,7 +386,7 @@ input[type=submit]{
 	justify-content: flex-end;
 	padding: 0 0 10px 0;
 }
-.favorite__box_item {
+.favourite__box_item {
 	display: flex;
 
 }
@@ -449,11 +457,11 @@ input[type=submit]{
 	.container{
 
 	}
-	.menu_favorite {
+	.menu_favourite {
 
 	}
-	.menu_favorite.active{
-		z-index: 3;
+	.menu_favourite.active{
+		z-index: 3; 
 
 	}
 	.favburger{
@@ -492,10 +500,17 @@ input[type=submit]{
 	.favtext{
 		padding: 0 0 0 10px;
 	}
-	.favorite{
-		display: none;
+	.favourite{
+	
+
+
+    right: -55%;
+
+
+    transition: all .3s ease-in-out;
+
 	}
-	.favorite.active{
+	.favourite.active{
 		right: 0%;
 		width: 55%;
 		height: 100%;
@@ -503,8 +518,11 @@ input[type=submit]{
 		display: flex;
 		z-index: 2;
 		overflow: scroll;
+	    transition: all .3s ease-in-out;
+
+
 	}
-	.favorite__box.active{}
+	.favourite__box.active{}
 
 	.generator{
 		width: 100%;
@@ -529,16 +547,16 @@ input[type=submit]{
 	.fav_btn{
 		display: flex;
 	}
-	.favorite__header{
+	.favourite__header{
 		opacity: 0;
 	}
 }
 
 @media (max-width: 425px) {
-	.favorite.active{
+	.favourite.active{
 		width: 100%;
 	}
-	.favorite__joke{
+	.favourite__joke{
 		margin: 88px 20px 20px 20px;
 	}
 	.main{
