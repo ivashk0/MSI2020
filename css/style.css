@@ -20,6 +20,7 @@ body{
 	font-family: 'Roboto', sans-serif;
 
 
+
 }
 
 
@@ -327,16 +328,14 @@ input[type=submit]{
 
 .favourite{
 	background-color: #F8F8F8;
-	/*width: 33.34%;*/
+	width: 33.34%;
 	min-height: 100vh;
-	width: 480px;
-
+	/*width: 480px;*/
 	position: fixed;
     right: 0;
     top: 0;
     z-index: 3;
-    transition: all .3s ease-in-out;
-	overflow: scroll;
+	overflow-x: scroll;
 
 }
 
@@ -441,7 +440,6 @@ input[type=submit]{
 
 /* делаем меню при смене разрышения экрана на Tablet */
 @media (min-width: 1024px){
-	
 	.menu_btn{
 		display: none;
 	}
@@ -500,18 +498,17 @@ input[type=submit]{
 	}
 	.favourite{
     right: -480px;
-    transition: all .3s ease-in-out;
+    transition: all 0.3s ease-in-out;
 
 	}
 	.favourite.active{
-
     	right: 0px;
 		width: 55%;
 		height: 100%;
 		position: fixed;
 		display: flex;
 		z-index: 2;
-	    transition: all .3s ease-in-out;
+	    transition: all 0.3s ease-in-out;
 	}
 
 	
@@ -540,9 +537,13 @@ input[type=submit]{
 		/*display: flex;
 		justify-content: space-between;*/
 	}
-	.favourite__main_joke{
+	.favourite__main_joke.active {
 		margin: 48px 0 0 0;
 	}
+	.favourite__main_joke{
+		margin: 88px 0 0 0;
+	}
+
 
 	.fav_btn{
 		display: flex;
@@ -593,4 +594,5 @@ input[type=submit]{
 	.menu_btn{
 		right: 20px;
 		top: 20px;
+	}
 }
