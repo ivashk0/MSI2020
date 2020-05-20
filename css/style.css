@@ -327,15 +327,17 @@ input[type=submit]{
 
 .favourite{
 	background-color: #F8F8F8;
-	width: 33.34%;
+	/*width: 33.34%;*/
 	min-height: 100vh;
-	/* width: 480px;                */
+	width: 480px;
 
 	position: fixed;
     right: 0;
     top: 0;
     z-index: 3;
     transition: all .3s ease-in-out;
+	overflow: scroll;
+
 }
 
 
@@ -501,23 +503,18 @@ input[type=submit]{
 		padding: 0 0 0 10px;
 	}
 	.favourite{
-	
-
-
-    right: -55%;
-
-
+    right: -480px;
     transition: all .3s ease-in-out;
 
 	}
 	.favourite.active{
-		right: 0%;
+    right: 0px;
+		
 		width: 55%;
 		height: 100%;
 		position: fixed;
 		display: flex;
 		z-index: 2;
-		overflow: scroll;
 	    transition: all .3s ease-in-out;
 
 
