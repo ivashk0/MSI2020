@@ -523,6 +523,7 @@ input[type=submit]{
 
 	.generator{
 		width: 100%;
+
 	}
 	.generator.active:after {
 		content: '';
