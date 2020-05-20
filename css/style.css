@@ -359,13 +359,15 @@ input[type=submit]{
 	color: #ABABAB;
 }
 
+.favourite__main_joke{
+	height: calc(100vh - 88px);
+	overflow: auto;
+}
+
 .favourite__box {
 	/*opacity: 0;*/
 	margin: 0px 0 20px 0;
 	/* width: 480px;                */
-
-
-
 	background: #FFFFFF;
 	border: 1px solid #F8F8F8;
 	box-sizing: border-box;
