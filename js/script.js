@@ -59,7 +59,7 @@ function randomFact() {
 
 $(document).ready(function(){
 	$('.fav_btn').click(function(event){
-		$('.favburger,.favorite,.generator,.fav_btn,.menu_favorite').toggleClass('active');
+		$('.favburger,.favourite,.generator,.fav_btn,.menu_favourite').toggleClass('active');
 		$('body').toggleClass('lock');
 	});
 });
@@ -74,10 +74,3 @@ $(document).ready(function(){
 	});
 
 */
-
-
-
-
-
-
-
