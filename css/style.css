@@ -522,7 +522,6 @@ input[type=submit]{
 	.favourite__box.active{}
 
 	.generator{
-		width: 100%;
 	}
 	.generator.active:after {
 		content: '';
