@@ -508,8 +508,8 @@ input[type=submit]{
 
 	}
 	.favourite.active{
-    right: 0px;
-		
+
+    	right: 0px;
 		width: 55%;
 		height: 100%;
 		position: fixed;
@@ -519,7 +519,9 @@ input[type=submit]{
 
 
 	}
-	.favourite__box.active{}
+	.favourite__header_text.active{
+		opacity: 0;
+	}
 
 	.generator{
 		width: 100%;
@@ -539,15 +541,27 @@ input[type=submit]{
 		margin: 40px;
 	}
 	.main__header{
-		display: flex;
-		justify-content: space-between;
+		/*display: flex;
+		justify-content: space-between;*/
 	}
 	.fav_btn{
 		display: flex;
 	}
 	.favourite__header{
-		opacity: 0;
+		display: flex;
+		justify-content: space-between;
 	}
+	.menu_btn{
+		position: fixed;
+		right: 40px;
+		top: 40px;
+	}
+	.main__header{
+		display: inline-block;
+	}
+
+		/*opacity: 0;*/
+
 }
 
 @media (max-width: 425px) {
@@ -567,4 +581,7 @@ input[type=submit]{
 	.box__upd_joke{
 		margin: 0 0 10px 0;
 	}
+	.menu_btn{
+		right: 20px;
+		top: 20px;
 }
