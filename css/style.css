@@ -422,7 +422,7 @@ input[type=submit]{
 	color: #ABABAB;
 }
 .box__id_text{
-	padding: 0 2.4px 0 0;
+	padding: 0 5px 0 0;
 	color: #8EA7FF;
 	text-decoration: underline;
 }
@@ -446,7 +446,11 @@ input[type=submit]{
 		display: none;
 	}
 }
-
+@media (max-width: 1200px){
+	.favourite{
+		width: 40%;
+	}
+}
 
 @media (max-width: 1023px){
 	body.lock{
@@ -489,8 +493,9 @@ input[type=submit]{
 	.favburger.active:after{
 		transform: rotate(-45deg) translate(2px, -2px);
 	}
-	.favtext{
+	.favtext.btn{
 		padding: 0 0 0 10px;
+		margin: 0;
 	}
 	.favourite{
     right: -480px;
@@ -554,7 +559,11 @@ input[type=submit]{
 	    background-color: #F8F8F8;
 	}
 	.menu_btn{
-		z-index: 3;
+		position: absolute;
+		top: 40px;
+		right: 40px;
+		z-index: 4;
+
 	}
 	.main__header{
 		/*display: inline-block;*/
