@@ -449,14 +449,9 @@ input[type=submit]{
 
 
 @media (max-width: 1023px){
-	body{
-
-	}
-
 	body.lock{
 		overflow: hidden;
 	}
-	.container{}
 	.menu_favourite {}
 	.menu_favourite.active{
 		z-index: 3; 
@@ -535,8 +530,8 @@ input[type=submit]{
 		margin: 40px;
 	}
 	.main__header{
-		/*display: flex;
-		justify-content: space-between;*/
+		display: flex;
+		justify-content: space-between;
 	}
 	.favourite__main_joke.active {
 		margin: 48px 0 0 0;
@@ -559,13 +554,10 @@ input[type=submit]{
 	    background-color: #F8F8F8;
 	}
 	.menu_btn{
-		position: fixed;
-		right: 40px;
-		top: 40px;
 		z-index: 3;
 	}
 	.main__header{
-		display: inline-block;
+		/*display: inline-block;*/
 	}
 
 		/*opacity: 0;*/
