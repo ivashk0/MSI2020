@@ -64,9 +64,7 @@ body{
     left: 140px;
     z-index: 2;
 }
-.main__header_icon.active{
-	opacity: 0;
-}
+
 a.intern{
 	font-weight: bold;
 	font-size: 20px;
@@ -478,6 +476,10 @@ input[type=submit]{
 	.main__header_icon{
     left: 40px;
 	}
+	.main__header_icon.active{
+	position: absolute;
+    top: 40px;
+	}
 	.favburger{
 		display: block;
 		position: relative;
@@ -589,6 +591,11 @@ input[type=submit]{
 	.main__header_icon{
 		top: 20px;
 		left: 20px;
+	}
+	.main__header_icon.active{
+	position: absolute;
+    top: 20px;
+	left: 20px;
 	}
 	.favourite.active{
 		width: 100%;
