@@ -59,7 +59,7 @@ function randomFact() {
 
 $(document).ready(function(){
 	$('.fav_btn').click(function(event){
-		$('.favburger,.favourite,.generator,.fav_btn,.menu_favourite,.favourite__header_text,.favourite__main_joke').toggleClass('active');
+		$('.favburger,.favourite,.generator,.fav_btn,.menu_favourite,.favourite__header_text,.favourite__main_joke,.main__header,.main__header_icon').toggleClass('active');
 		$('body').toggleClass('lock');
 	});
 });
