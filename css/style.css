@@ -18,11 +18,7 @@ h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight: inherit;}
 
 body{
 	font-family: 'Roboto', sans-serif;
-
-
-
 }
-
 
 .container{
 	display: inline-flex;
@@ -33,33 +29,44 @@ body{
 }
 .generator{
 	width: 66.66%
-
 }
 
 .main{
-	margin: 40px 140px;
+	margin: 146px 140px 40px 140px;
+}
+.main__header{	
+	position: fixed;
+	height: 75px;
+	width: 66.66%;
+	background-color: white;	
+	z-index: 5;
+}
+.main__header.active{
+	position: static;
+	height: 0px;
+
+	
 }
 
+/*.main__header:before{
+	content: '';
+	position: absolute;
+	width: 100%;
+	height: 100px;
+	top: 0;
+	left: 0;
+	background-color: red;
+	}*/
 
-/*
-@media (max-width: 1200px) {
-	.main{
-		max-width: 970px;
-	}
+.main__header_icon{
+	position: fixed;
+    top: 40px;
+    left: 140px;
+    z-index: 2;
 }
-@media (max-width: 992px) {
-	.main{
-		max-width: 750px;
-	}
+.main__header_icon.active{
+	opacity: 0;
 }
-@media (max-width: 767px) {
-	.main{
-		max-width: none;
-	}
-}
-*/
-
-
 a.intern{
 	font-weight: bold;
 	font-size: 20px;
@@ -67,8 +74,10 @@ a.intern{
 	color: #333333;
 }
 
+.main__content{
+	margin: 0px 0 43px 0; 
+}
 .main__content_text{
-	margin: 78px 0 33px 0; 
 	line-height: 44px;
 }
 
@@ -359,6 +368,7 @@ input[type=submit]{
 }
 
 .favourite__main_joke{
+	margin: 20px 0 0 0;
 	height: calc(100vh - 88px);
 	overflow: auto;
 }
@@ -446,6 +456,9 @@ input[type=submit]{
 	}
 }
 @media (max-width: 1200px){
+	.main__header{
+		width: 60%;
+	}
 	.favourite{
 		width: 40%;
 	}
@@ -458,7 +471,13 @@ input[type=submit]{
 	.menu_favourite {}
 	.menu_favourite.active{
 		z-index: 3; 
-}
+	}
+	.main__header{
+		width: 100%;
+	}
+	.main__header_icon{
+    left: 40px;
+	}
 	.favburger{
 		display: block;
 		position: relative;
@@ -521,7 +540,7 @@ input[type=submit]{
 	}
 	.generator.active:after {
 		content: '';
-		position: absolute;
+		position: fixed;
 		top: 0;
 		left: 0;
 		right: 0;
@@ -530,9 +549,9 @@ input[type=submit]{
 		z-index: 2;
 	}
 	.main{
-		margin: 40px;
+		margin: 146px 40px 40px 40px;
 	}
-	.main__header{
+	.main__header_body{
 		display: flex;
 		justify-content: space-between;
 	}
@@ -557,21 +576,20 @@ input[type=submit]{
 	    background-color: #F8F8F8;
 	}
 	.menu_btn{
-		position: absolute;
+		cursor: pointer;
+		position: fixed;
 		top: 40px;
 		right: 40px;
-		z-index: 4;
-
+		z-index: 3;
 	}
-	.main__header{
-		/*display: inline-block;*/
-	}
-
-		/*opacity: 0;*/
 
 }
 
 @media (max-width: 425px) {
+	.main__header_icon{
+		top: 20px;
+		left: 20px;
+	}
 	.favourite.active{
 		width: 100%;
 	}
@@ -582,7 +600,7 @@ input[type=submit]{
 		margin: 40px 20px 20px 20px;
 	}
 	.main{
-		margin: 20px;
+		margin: 126px 20px 20px 20px;
 	}
 
 	.joke__box{
