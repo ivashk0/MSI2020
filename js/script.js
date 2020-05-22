@@ -3,10 +3,15 @@ const url = document.querySelector('.box__id_text');
 const id = document.querySelector('#box__idjoke');
 const value = document.querySelector('.main__box_text');
 const updated = document.querySelector('#updjoke');
-const categories = document.querySelector('#caterogiesJoke');
+const categories = document.querySelector('#categoriesJoke');
 
+fetch('https://api.chucknorris.io/jokes/random?category=animal')
+/*fetch('https://api.chucknorris.io/jokes/random?category=animal')
+fetch('https://api.chucknorris.io/jokes/random?category=career')
+fetch('https://api.chucknorris.io/jokes/random?category=celebrity')
+fetch('https://api.chucknorris.io/jokes/random?category=dev')
+fetch('https://api.chucknorris.io/jokes/search?query=')*/
 
-fetch('https://api.chucknorris.io/jokes/random')
   .then(response => response.json())
   .then(data => {
     console.log(data)
@@ -17,26 +22,12 @@ fetch('https://api.chucknorris.io/jokes/random')
     categories.innerHTML = data.categories;
   } )
 
-// fetch('https://api.chucknorris.io/jokes/categories')
-//   .then(response => response.json())
-//   .then(data => {
-//     console.log(data)
-// })
 
-// нажымаем скрыить/показать подкатегорию
-    function showHide(block_id) {
-                //Если элемент с id-шником element_id существует
-                if (document.getElementById(block_id)) { 
-                    //Записываем ссылку на элемент в переменную obj
-                    var obj = document.getElementById(block_id);
-
-                    //Если css-свойство display не block, то: 
-                    if (obj.style.display != "block") { 
-                        obj.style.display = "block"; //Показываем элемент
-                    }
-                    else obj.style.display = "none"; //Скрываем элемент
-                }
-            }  
+function getJoke(){}
+document.querySelector('#random').addEventListener("submit", function() {
+      getJoke();
+    });
+    getJoke();
 
 
 // показать блок "избранное"
@@ -56,6 +47,62 @@ favBtn.addEventListener('click', function () {
     lockClasses[i].classList.toggle('lock');
 	}
 })
+
+// показать/скрыть блоки радиокнопок
+const randomChosen = document.querySelector('#random');
+const categoriesChosen = document.querySelector('#categories');
+const searchChosen = document.querySelector('#search');
+
+randomChosen.addEventListener('click', function (){
+	const removeClasses = document.querySelectorAll(
+		'.choise_categories, .joke__search'
+		)
+	for(let i = 0; i < removeClasses.length; i++) {
+    removeClasses[i].classList.remove('active');
+  }
+})
+
+categoriesChosen.addEventListener('click', function (){
+	const removeClasses = document.querySelectorAll(
+		'.joke__search'
+		)
+	for(let i = 0; i < removeClasses.length; i++) {
+    removeClasses[i].classList.remove('active');
+  }
+  const activeClasses = document.querySelectorAll(
+		'.choise_categories'
+		)
+	for(let i = 0; i < activeClasses.length; i++) {
+    activeClasses[i].classList.add('active');
+  }
+})
+
+searchChosen.addEventListener('click', function (){
+	const removeClasses = document.querySelectorAll(
+		'.choise_categories'
+		)
+	for(let i = 0; i < removeClasses.length; i++) {
+    removeClasses[i].classList.remove('active');
+  }
+  const activeClasses = document.querySelectorAll(
+		'.joke__search'
+		)
+	for(let i = 0; i < activeClasses.length; i++) {
+    activeClasses[i].classList.add('active');
+  }
+})
+
+// выбор категории (animal/career/cel/dev)
+/*const activeCat = document.querySelector('.btn__categories');
+
+activeCat.addEventListener('click', function (){
+	const activeClasses = document.querySelectorAll(
+		'.btn__categories'
+		)
+	for(let i = 0; i < activeClasses.length; i++) {
+    activeClasses[i].classList.add('active');
+  }
+})*/
 
 
 
@@ -93,12 +140,12 @@ function randomFact() {
       	idjoke 			= json["id"]
       	fact 			= json["value"]
       	updjoke 		= json["updated_at"]
-      	caterogiesJoke	= json["categories"];
+      	categoriesJoke	= json["categories"];
 
       document.getElementById("box__idjoke").innerHTML = idjoke;	
       document.getElementById("main__box_text").innerHTML = fact;
       document.getElementById("updjoke").innerHTML = updjoke;
-      document.getElementById("caterogiesJoke").innerHTML = caterogiesJoke;
+      document.getElementById("categoriesJoke").innerHTML = categoriesJoke;
     }
 
     // Finally we add a click event listener on the logo of Chuck Norris
@@ -109,7 +156,5 @@ function randomFact() {
     randomFact();
 // закончили получать шутку Random
 */
-
-
 
 
