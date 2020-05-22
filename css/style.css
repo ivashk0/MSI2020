@@ -262,10 +262,9 @@ input[type=submit]{
 	display: flex;
 	justify-content: flex-end;
 	padding: 0 0 10px 0;
-
-
-
 }
+
+
 .main__box_item {
 	display: flex;
 }
@@ -292,6 +291,10 @@ input[type=submit]{
 	font-size: 18px;
 	line-height: 26px;
 	color: #333333;
+	word-wrap: break-word;
+
+}
+.main__box_text_joke{
 }
 
 .main__box_footer{
