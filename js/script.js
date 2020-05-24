@@ -1,33 +1,128 @@
 // получаем шутку Random
 const url = document.querySelector('.box__id_text');
-const id = document.querySelector('#box__idjoke');
+const id = document.querySelector('.box__idjoke');
 const value = document.querySelector('.main__box_text');
-const updated = document.querySelector('#updjoke');
+const updated = document.querySelector('.updjoke');
 const categories = document.querySelector('#categoriesJoke');
-
-fetch('https://api.chucknorris.io/jokes/random?category=animal')
-/*fetch('https://api.chucknorris.io/jokes/random?category=animal')
-fetch('https://api.chucknorris.io/jokes/random?category=career')
-fetch('https://api.chucknorris.io/jokes/random?category=celebrity')
-fetch('https://api.chucknorris.io/jokes/random?category=dev')
-fetch('https://api.chucknorris.io/jokes/search?query=')*/
-
-  .then(response => response.json())
-  .then(data => {
-    console.log(data)
-    url.href = data.url;
-    id.innerHTML = data.id;
-    value.innerHTML = data.value;
-    updated.innerHTML = Math.ceil((Date.now() - new Date(data.updated_at.split(".")[0].replace(" ", "T"))) / 36e5);
-    categories.innerHTML = data.categories;
-  } )
+const mainJoke = document.querySelector('.main-joke');
 
 
-function getJoke(){}
-document.querySelector('#random').addEventListener("submit", function() {
-      getJoke();
-    });
-    getJoke();
+const buttonGetJoke = document.querySelector('.button__get-joke');
+
+buttonGetJoke.addEventListener('click', function () {
+	fetch('https://api.chucknorris.io/jokes/random?category=animal')
+		/*fetch('https://api.chucknorris.io/jokes/random?category=animal')
+		fetch('https://api.chucknorris.io/jokes/random?category=career')
+		fetch('https://api.chucknorris.io/jokes/random?category=celebrity')
+		fetch('https://api.chucknorris.io/jokes/random?category=dev')
+		fetch('https://api.chucknorris.io/jokes/search?query=')*/
+
+		.then(response => response.json())
+		.then(data => {
+			const mainJokeBox = document.createElement('div');
+			mainJokeBox.classList.add('main-joke_box');
+			const jokeBox = document.createElement('div');
+			jokeBox.classList.add('joke__box');
+			mainJokeBox.appendChild(jokeBox);
+			mainJoke.append(mainJokeBox);
+			// block heart
+			const mainBoxHeart = document.createElement('div');
+			mainBoxHeart.classList.add('main__box_heart');
+			const heartButton = document.createElement('button');
+			heartButton.classList.add('heart_btn1');
+			const heartButtonIcon = document.createElement('img');
+			heartButtonIcon.src = 'img/heart1.svg';
+			heartButton.appendChild(heartButtonIcon);
+			mainBoxHeart.appendChild(heartButton);
+			// block item
+			const mainBoxItem = document.createElement('div');
+			mainBoxItem.classList.add('main__box_item');
+			const mainBoxItemCol = document.createElement('div');
+			mainBoxItemCol.classList.add('main__box_col');
+			const mainBoxItemColIcon = document.createElement('div');
+			mainBoxItemColIcon.classList.add('main__box_col_icon');
+			mainBoxItemCol.appendChild(mainBoxItemColIcon);
+			const mainBoxIcon = document.createElement('div');
+			mainBoxIcon.classList.add('main__box_icon');
+			mainBoxItemColIcon.appendChild(mainBoxIcon);
+			const mainBoxItemColIconImg = document.createElement('img');
+			mainBoxItemColIconImg.src = 'img/msg.svg';
+			mainBoxIcon.appendChild(mainBoxItemColIconImg);
+			const mainBoxColContent = document.createElement('div');
+			mainBoxColContent.classList.add('main__box_col_content');
+			// block ID
+			const mainBoxId = document.createElement('div');
+			mainBoxId.classList.add('main__box_id');
+			const idLink = document.createElement('span');
+			idLink.classList.add('box__id_link');
+			mainBoxId.appendChild(idLink);
+			idLink.innerHTML = 'ID: ';
+			const idText = document.createElement('a');
+			idText.classList.add('box__id_text');
+			mainBoxId.appendChild(idText);
+			// idText.innerHTML = 'test';
+			const idJoke = document.createElement('span');
+			idJoke.classList.add('box__idjoke');
+			idText.appendChild(idJoke);
+			idJoke.innerHTML = 'tEsT';
+			const svgLink = document.createElement('img');
+			svgLink.src = 'img/link.svg';
+			mainBoxId.appendChild(svgLink);
+
+			const mainBoxText = document.createElement('div');
+			mainBoxText.classList.add('main__box_text');
+			mainBoxColContent.append(mainBoxId, mainBoxText);
+			mainBoxItem.append(mainBoxItemColIcon, mainBoxColContent);
+			// block footer
+			const mainBoxFooter = document.createElement('div');
+			mainBoxFooter.classList.add('main__box_footer');
+			const boxUpd = document.createElement('div');
+			boxUpd.classList.add('main__box_upd');
+			mainBoxFooter.appendChild(boxUpd);
+			const boxUpdJoke = document.createElement('p');
+			boxUpdJoke.classList.add('box__upd_joke');
+			boxUpd.appendChild(boxUpdJoke);
+			const timeJoke = document.createElement('span');
+			timeJoke.classList.add('updjoke');
+			boxUpdJoke.appendChild(timeJoke);
+			boxUpdJoke.innerHTML += 'Last update: ' + timeJoke + ' hours ago';
+
+			
+			jokeBox.append(mainBoxHeart, mainBoxItem, mainBoxFooter);
+
+			console.log(data);
+			url.href = data.url;
+			id.innerHTML = data.id;
+			value.innerHTML = data.value;
+			updated.innerHTML = Math.ceil((Date.now() - new Date(data.updated_at.split(".")[0].replace(" ", "T"))) / 36e5);
+			categories.innerHTML = data.categories;
+		});
+});
+
+
+// fetch('https://api.chucknorris.io/jokes/random?category=animal')
+// /*fetch('https://api.chucknorris.io/jokes/random?category=animal')
+// fetch('https://api.chucknorris.io/jokes/random?category=career')
+// fetch('https://api.chucknorris.io/jokes/random?category=celebrity')
+// fetch('https://api.chucknorris.io/jokes/random?category=dev')
+// fetch('https://api.chucknorris.io/jokes/search?query=')*/
+
+//   .then(response => response.json())
+//   .then(data => {
+//     console.log(data)
+//     url.href = data.url;
+//     id.innerHTML = data.id;
+//     value.innerHTML = data.value;
+//     updated.innerHTML = Math.ceil((Date.now() - new Date(data.updated_at.split(".")[0].replace(" ", "T"))) / 36e5);
+//     categories.innerHTML = data.categories;
+//   } )
+
+
+// function getJoke(){}
+// document.querySelector('#random').addEventListener("submit", function() {
+//       getJoke();
+//     });
+//     getJoke();
 
 
 // показать блок "избранное"
@@ -49,48 +144,22 @@ favBtn.addEventListener('click', function () {
 })
 
 // показать/скрыть блоки радиокнопок
-const randomChosen = document.querySelector('#random');
-const categoriesChosen = document.querySelector('#categories');
-const searchChosen = document.querySelector('#search');
+let radioInputs = document.querySelectorAll('.radio__input');
+let innerBlocks = document.querySelectorAll('.inner-block');
 
-randomChosen.addEventListener('click', function (){
-	const removeClasses = document.querySelectorAll(
-		'.choise_categories, .joke__search'
-		)
-	for(let i = 0; i < removeClasses.length; i++) {
-    removeClasses[i].classList.remove('active');
-  }
-})
+const setActiveItem = (index, items) => {
+	items.forEach((item, itemIndex) => {
+		index === itemIndex
+			? item.classList.add('active')
+			: item.classList.remove('active')
+	})
+}
 
-categoriesChosen.addEventListener('click', function (){
-	const removeClasses = document.querySelectorAll(
-		'.joke__search'
-		)
-	for(let i = 0; i < removeClasses.length; i++) {
-    removeClasses[i].classList.remove('active');
-  }
-  const activeClasses = document.querySelectorAll(
-		'.choise_categories'
-		)
-	for(let i = 0; i < activeClasses.length; i++) {
-    activeClasses[i].classList.add('active');
-  }
-})
-
-searchChosen.addEventListener('click', function (){
-	const removeClasses = document.querySelectorAll(
-		'.choise_categories'
-		)
-	for(let i = 0; i < removeClasses.length; i++) {
-    removeClasses[i].classList.remove('active');
-  }
-  const activeClasses = document.querySelectorAll(
-		'.joke__search'
-		)
-	for(let i = 0; i < activeClasses.length; i++) {
-    activeClasses[i].classList.add('active');
-  }
-})
+radioInputs.forEach((item, index) => {
+	item.addEventListener('click', () => {
+		setActiveItem(index, innerBlocks);
+	});
+});
 
 // выбор категории (animal/career/cel/dev)
 /*const activeCat = document.querySelector('.btn__categories');
