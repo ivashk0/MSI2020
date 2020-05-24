@@ -1,16 +1,12 @@
 // получаем шутку Random
-const url = document.querySelector('.box__id_text');
-const id = document.querySelector('.box__idjoke');
-const value = document.querySelector('.main__box_text');
-const updated = document.querySelector('.updjoke');
-const categories = document.querySelector('#categoriesJoke');
+
 const mainJoke = document.querySelector('.main-joke');
 
 
 const buttonGetJoke = document.querySelector('.button__get-joke');
 
 buttonGetJoke.addEventListener('click', function () {
-	fetch('https://api.chucknorris.io/jokes/random?category=animal')
+	fetch('https://api.chucknorris.io/jokes/random?category=celebrity')
 		/*fetch('https://api.chucknorris.io/jokes/random?category=animal')
 		fetch('https://api.chucknorris.io/jokes/random?category=career')
 		fetch('https://api.chucknorris.io/jokes/random?category=celebrity')
@@ -82,13 +78,20 @@ buttonGetJoke.addEventListener('click', function () {
 			const boxUpdJoke = document.createElement('p');
 			boxUpdJoke.classList.add('box__upd_joke');
 			boxUpd.appendChild(boxUpdJoke);
+			boxUpd.innerHTML = 'Last update: ';
 			const timeJoke = document.createElement('span');
 			timeJoke.classList.add('updjoke');
 			boxUpdJoke.appendChild(timeJoke);
-			boxUpdJoke.innerHTML += 'Last update: ' + timeJoke + ' hours ago';
+			
 
 			
 			jokeBox.append(mainBoxHeart, mainBoxItem, mainBoxFooter);
+
+const url = document.querySelector('.box__id_text');
+const id = document.querySelector('.box__idjoke');
+const value = document.querySelector('.main__box_text');
+const updated = document.querySelector('.updjoke');
+const categories = document.querySelector('#categoriesJoke');
 
 			console.log(data);
 			url.href = data.url;
