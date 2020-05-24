@@ -33,19 +33,20 @@ body{
 
 .main{
 	margin: 146px 140px 40px 140px;
+	overflow: hidden;
 }
-.main__header{	
+.main__header{
 	position: fixed;
 	height: 75px;
 	width: 66.66%;
-	background-color: white;	
+	background-color: white;
 	z-index: 5;
 }
 .main__header.active{
 	position: static;
 	height: 0px;
 
-	
+
 }
 
 /*.main__header:before{
@@ -73,7 +74,7 @@ a.intern{
 }
 
 .main__content{
-	margin: 0px 0 43px 0; 
+	margin: 0px 0 43px 0;
 }
 .main__content_text{
 	line-height: 44px;
@@ -338,7 +339,7 @@ p.lets{
 
 }
 .mainbox{
-	
+
 }
 
 .box__categorie {
@@ -359,7 +360,10 @@ p.lets{
 }
 
 
-
+.box__categorie:empty,
+.box__categorie_text:empty {
+	display: none;
+}
 
 
 
@@ -427,12 +431,12 @@ p.lets{
 }
 
 .box__col{
-	
+
 }
 
 .box__col_icon{
 	padding: 0px 20px 20px 0px;
-	
+
 }
 
 .box__icon {
@@ -492,7 +496,7 @@ p.lets{
 	.favourite{
 		width: 40%;
 	}
-	
+
 
 @media (max-width: 1023px){
 	body.lock{
@@ -500,7 +504,7 @@ p.lets{
 	}
 	.menu_favourite {}
 	.menu_favourite.active{
-		z-index: 3; 
+		z-index: 3;
 	}
 	.main__header{
 		width: 100%;
@@ -563,7 +567,7 @@ p.lets{
 	    transition: all 0.3s ease-in-out;
 	}
 
-	
+
 	.favourite__header_text {
 		display: none;
 	}
@@ -616,7 +620,7 @@ p.lets{
 		right: 40px;
 		z-index: 3;
 	}
-	
+
 
 }
 
@@ -656,5 +660,21 @@ p.lets{
 	.box__categorie{
 	height: 24px;
 	}
-	
+
+}
+}
+
+.joke__box {
+	animation: fadeIn 100ms linear;
+}
+
+@keyframes fadeIn {
+	from {
+		transform: scale(0);
+		opacity: 0;
+	}
+	to {
+		transform: scale(1);
+		opacity: 1;
+	}
 }
