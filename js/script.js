@@ -1,12 +1,9 @@
 // получаем шутку Random
-
 const mainJoke = document.querySelector('.main-joke');
-
-
 const buttonGetJoke = document.querySelector('.button__get-joke');
 
 buttonGetJoke.addEventListener('click', function () {
-	fetch('https://api.chucknorris.io/jokes/random?category=celebrity')
+	fetch('https://api.chucknorris.io/jokes/random?category=animal')
 		/*fetch('https://api.chucknorris.io/jokes/random?category=animal')
 		fetch('https://api.chucknorris.io/jokes/random?category=career')
 		fetch('https://api.chucknorris.io/jokes/random?category=celebrity')
@@ -52,15 +49,12 @@ buttonGetJoke.addEventListener('click', function () {
 			const idLink = document.createElement('span');
 			idLink.classList.add('box__id_link');
 			mainBoxId.appendChild(idLink);
-			idLink.innerHTML = 'ID: ';
 			const idText = document.createElement('a');
 			idText.classList.add('box__id_text');
 			mainBoxId.appendChild(idText);
-			// idText.innerHTML = 'test';
 			const idJoke = document.createElement('span');
 			idJoke.classList.add('box__idjoke');
 			idText.appendChild(idJoke);
-			idJoke.innerHTML = 'tEsT';
 			const svgLink = document.createElement('img');
 			svgLink.src = 'img/link.svg';
 			mainBoxId.appendChild(svgLink);
@@ -74,31 +68,34 @@ buttonGetJoke.addEventListener('click', function () {
 			mainBoxFooter.classList.add('main__box_footer');
 			const boxUpd = document.createElement('div');
 			boxUpd.classList.add('main__box_upd');
-			mainBoxFooter.appendChild(boxUpd);
 			const boxUpdJoke = document.createElement('p');
 			boxUpdJoke.classList.add('box__upd_joke');
+			const boxCategorie = document.createElement('div');
+			boxCategorie.classList.add('box__categorie');
+			const boxCategorieText = document.createElement('p');
+			boxCategorieText.classList.add('box__categorie_text');
+			boxCategorie.appendChild(boxCategorieText);
+			
+			mainBoxFooter.append(boxUpd, boxCategorie);
+			
 			boxUpd.appendChild(boxUpdJoke);
-			boxUpd.innerHTML = 'Last update: ';
-			const timeJoke = document.createElement('span');
-			timeJoke.classList.add('updjoke');
-			boxUpdJoke.appendChild(timeJoke);
-			
 
-			
+			const timeJoke = document.createElement('p');
+			timeJoke.innerHTML = `
+				Last update: ${
+					Math.ceil((Date.now() - new Date(data.updated_at.split(".")[0].replace(" ", "T"))) / 36e5)
+				} hours ago`;
+			boxUpdJoke.appendChild(timeJoke);
+
 			jokeBox.append(mainBoxHeart, mainBoxItem, mainBoxFooter);
 
-const url = document.querySelector('.box__id_text');
-const id = document.querySelector('.box__idjoke');
-const value = document.querySelector('.main__box_text');
-const updated = document.querySelector('.updjoke');
-const categories = document.querySelector('#categoriesJoke');
-
 			console.log(data);
-			url.href = data.url;
-			id.innerHTML = data.id;
-			value.innerHTML = data.value;
-			updated.innerHTML = Math.ceil((Date.now() - new Date(data.updated_at.split(".")[0].replace(" ", "T"))) / 36e5);
-			categories.innerHTML = data.categories;
+			idText.href = data.url;
+			idText.target = '_blank';
+			idText.innerHTML = data.id;
+			idLink.innerHTML = 'ID: ';
+			mainBoxText.innerHTML = data.value;
+			boxCategorieText.innerHTML = data.categories;
 		});
 });
 
@@ -178,7 +175,7 @@ activeCat.addEventListener('click', function (){
 
 
 
-/* скрытие меню при клике 
+/* скрытие меню при клике
 	$(document).mouseup(function (e){ // событие клика по веб-документу
 		var div = $('.favorite.active'); // тут указываем ID элемента
 		if (!div.is(e.target) // если клик был не по нашему блоку
@@ -214,7 +211,7 @@ function randomFact() {
       	updjoke 		= json["updated_at"]
       	categoriesJoke	= json["categories"];
 
-      document.getElementById("box__idjoke").innerHTML = idjoke;	
+      document.getElementById("box__idjoke").innerHTML = idjoke;
       document.getElementById("main__box_text").innerHTML = fact;
       document.getElementById("updjoke").innerHTML = updjoke;
       document.getElementById("categoriesJoke").innerHTML = categoriesJoke;
