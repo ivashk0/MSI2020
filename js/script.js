@@ -215,7 +215,7 @@ radioInputs.forEach((item, index) => {
 									idText.href = data.url;
 									idText.target = '_blank';
 									idText.innerHTML = data.id;
-									idLink.innerHTML = 'ID ANIMAL: ';
+									idLink.innerHTML = 'ID: ';
 									mainBoxText.innerHTML = data.value;
 									boxCategorieText.innerHTML = data.categories;
 								});
@@ -308,7 +308,7 @@ radioInputs.forEach((item, index) => {
 									idText.href = data.url;
 									idText.target = '_blank';
 									idText.innerHTML = data.id;
-									idLink.innerHTML = 'ID CAREER: ';
+									idLink.innerHTML = 'ID: ';
 									mainBoxText.innerHTML = data.value;
 									boxCategorieText.innerHTML = data.categories;
 								});
@@ -401,7 +401,7 @@ radioInputs.forEach((item, index) => {
 									idText.href = data.url;
 									idText.target = '_blank';
 									idText.innerHTML = data.id;
-									idLink.innerHTML = 'ID CELEBRITY: ';
+									idLink.innerHTML = 'ID: ';
 									mainBoxText.innerHTML = data.value;
 									boxCategorieText.innerHTML = data.categories;
 								});
@@ -494,7 +494,7 @@ radioInputs.forEach((item, index) => {
 									idText.href = data.url;
 									idText.target = '_blank';
 									idText.innerHTML = data.id;
-									idLink.innerHTML = 'ID DEV: ';
+									idLink.innerHTML = 'ID: ';
 									mainBoxText.innerHTML = data.value;
 									boxCategorieText.innerHTML = data.categories;
 								});
@@ -503,9 +503,9 @@ radioInputs.forEach((item, index) => {
 				})
 			}
 		}
-		if(item.id === 'search') {
-			// fetch('https://api.chucknorris.io/jokes/search?query=')
-		}
+		// if(item.id === 'search') {
+		// 	fetch('https://api.chucknorris.io/jokes/search?query=')
+		// }
 	});
 });
 
