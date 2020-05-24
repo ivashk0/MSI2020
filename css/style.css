@@ -21,7 +21,7 @@ body{
 }
 
 .container{
-	display: inline-flex;
+	display: flex;
 	/*display: flex;
 	flex-direction: column;
 	overflow: hidden;*/
@@ -247,7 +247,7 @@ p.lets{
 .btn__submit{
 }
 
-input[type=submit]{
+.button__get-joke{
 	padding: 10px 40px;
     background: linear-gradient(92.01deg, #8EA7FF 0%, #7291FF 100%);
     box-sizing: border-box;
@@ -260,20 +260,24 @@ input[type=submit]{
 }
 
 
-.main__joke{
+.main-joke{
 
 }
 
-.main__joke_box{
-	margin: 0 0 20px 0;
-	background: #F8F8F8;
+.main-joke_box{
+	/*background: #F8F8F8;
 	box-sizing: border-box;
-	border-radius: 20px;
+	border-radius: 20px;*/
 
 }
 
 .joke__box{
+	margin: 0 0 20px 0;
+
 	padding: 40px 40px 45px 40px;
+	background: #F8F8F8;
+    box-sizing: border-box;
+    border-radius: 20px;
 
 }
 
@@ -307,7 +311,7 @@ input[type=submit]{
 .main__box_col_content {
 	/* width: 540px;						*/
 }
-.main__box_id {}
+
 .main__box_text {
 	padding: 5px 0 25px 0;
 	font-size: 18px;
@@ -329,11 +333,12 @@ input[type=submit]{
 .main__box_upd{
 	margin: 0 0 0 60px;
 	padding: 6px 0;
+	font-size: 10px;
+	color: #ABABAB;
 
 }
 .mainbox{
-	font-size: 10px;
-	color: #ABABAB;
+	
 }
 
 .box__categorie {
@@ -443,14 +448,16 @@ input[type=submit]{
 
 .box__col_content{
 	/* width: 300px;                */
-
 }
 
 
-.box__id_link {
+.main__box_id {
 	font-weight: 500;
 	font-size: 10px;
 	line-height: 14px;
+}
+
+.box__id_link {
 	color: #ABABAB;
 }
 .box__id_text{
@@ -485,7 +492,7 @@ input[type=submit]{
 	.favourite{
 		width: 40%;
 	}
-}
+	
 
 @media (max-width: 1023px){
 	body.lock{
@@ -609,6 +616,7 @@ input[type=submit]{
 		right: 40px;
 		z-index: 3;
 	}
+	
 
 }
 
@@ -645,4 +653,8 @@ input[type=submit]{
 		right: 20px;
 		top: 20px;
 	}
+	.box__categorie{
+	height: 24px;
+	}
+	
 }
